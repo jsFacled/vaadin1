@@ -1,0 +1,49 @@
+.nw-logo-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+    position: relative;
+}
+
+.nw-logo-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(26, 26, 46, 0.95);
+}
+
+.logo-info {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nw-logo-container {
+        width: 120px !important;
+        height: 80px !important;
+    }
+
+    .logo-info {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
