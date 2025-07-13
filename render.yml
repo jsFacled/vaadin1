@@ -1,10 +1,6 @@
-# render.yaml
 services:
   - type: web
     name: vaadin1-app
-    env: java
-    buildCommand: ./mvnw clean install
-    startCommand: java -jar target/vaadin1-0.0.1-SNAPSHOT.jar
-    envVars:
-      - key: JAVA_VERSION
-        value: 17
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
