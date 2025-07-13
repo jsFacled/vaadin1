@@ -1,15 +1,32 @@
-FROM eclipse-temurin:17-jdk
+# 🏗 Etapa 1: Build con Maven
+FROM eclipse-temurin:17-jdk-alpine as build
 
 WORKDIR /app
 
-COPY . .
+# Copiamos solo lo necesario para aprovechar caché
+COPY pom.xml mvnw ./
+COPY .mvn .mvn
+RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
-# Usamos el wrapper de Maven y le damos permisos
-RUN chmod +x ./mvnw && ./mvnw clean install -Pproduction
+# Copiamos el código fuente y compilamos
+COPY src ./src
+RUN ./mvnw clean package -DskipTests
 
-# Puerto: usar el valor de PORT si Render lo define
+# 🚀 Etapa 2: Imagen final mínima
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+# Instalamos tini para mejor manejo de señales (opcional pero recomendado)
+RUN apk add --no-cache tini
+
+# Copiamos el JAR construido
+COPY --from=build /app/target/vaadin1-0.0.1-SNAPSHOT.jar app.jar
+
+# Puerto definido por Render (por defecto 8080)
 ENV PORT=8080
-EXPOSE 8080
+EXPOSE ${PORT}
 
-# Spring Boot usará el valor de PORT automáticamente si lo configurás
-CMD ["java", "-Dserver.port=${PORT}", "-jar", "target/vaadin1-0.0.1-SNAPSHOT.jar"]
+# Usamos tini como entrypoint
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]

@@ -89,6 +89,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!--  Bloque para perfil producción
 	<profiles>
 		<profile>
 			<id>production</id>
@@ -97,7 +98,7 @@
 			</properties>
 		</profile>
 	</profiles>
-
+	-->
 	<repositories>
 		<repository>
 			<id>vaadin-prereleases</id>
