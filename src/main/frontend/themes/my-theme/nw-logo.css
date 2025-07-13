@@ -30,6 +30,12 @@
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
+.logo__description {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+}
 
 .logo__link {
   display: flex;

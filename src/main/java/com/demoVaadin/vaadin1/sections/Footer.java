@@ -12,7 +12,8 @@ public class Footer extends VerticalLayout {
         setSpacing(true);
 
         add(new Logo2DComponent());
-        add(new Paragraph("@NETICWARE 2025 - Todos los derechos Reservados"));
+        add(new Paragraph("Website | Mobile | SaaS "));
+        add(new Paragraph("Copyright © 2025 - NETICWARE | Software Development - Todos los derechos Reservados"));
 
 
     }

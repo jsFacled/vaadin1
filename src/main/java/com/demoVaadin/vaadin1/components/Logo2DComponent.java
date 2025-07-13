@@ -22,9 +22,12 @@ public class Logo2DComponent extends FlexLayout {
         Anchor logoLink = new Anchor("#hero", logoImg);
         logoLink.addClassName("logo__link");
 
-        Span nombre = new Span("neticware");
+        Span nombre = new Span("neticware ");
         nombre.addClassName("logo__text");
 
-        add(logoLink, nombre);
+        Span logoDescription = new Span("SOFTWARE DEVELOPMENT");
+        logoDescription.addClassName("logo__description");
+
+        add(logoLink, nombre,logoDescription);
     }
 }
