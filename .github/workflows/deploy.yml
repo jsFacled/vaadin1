@@ -19,14 +19,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Construir el proyecto con Maven
+      - name: Construir el proyecto con Maven (producción)
         run: mvn clean install -Pproduction
 
-      - name: Copiar archivos estáticos desde src
+      - name: Copiar archivos estáticos compilados por Vaadin
         run: |
           mkdir public
-          cp src/main/frontend/index.html public/index.html
-      
+          cp -r target/frontend/* public/ || echo "No se encontró carpeta frontend"
+          cp target/index.html public/index.html || echo "No se encontró index.html"
 
       - name: Deploy a gh-pages
         uses: peaceiris/actions-gh-pages@v3
