@@ -1,0 +1,36 @@
+name: Deploy Vaadin to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar Java y Maven
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Construir el proyecto con Maven
+        run: mvn clean install -Pproduction
+
+      - name: Copiar archivos estáticos
+        run: |
+          mkdir public
+          cp -r target/frontend/* public/ || echo "No se encontró carpeta frontend"
+          cp target/index.html public/index.html || echo "No se encontró index.html"
+
+      - name: Deploy a gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
