@@ -4,15 +4,15 @@ import com.demoVaadin.vaadin1.utils.SectionId;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
-public class HeaderComponent extends HorizontalLayout {
+public class NavbarComponent extends HorizontalLayout {
 
-    public HeaderComponent() {
-        // Logo como componente reutilizable
-        Logo2DComponent logo = new Logo2DComponent();
+    public NavbarComponent() {
+        addClassName("navbar");
+        setSpacing(true);
+        setAlignItems(Alignment.CENTER);
+        setJustifyContentMode(JustifyContentMode.END);
+        setWidthFull();
 
-
-
-        // Enlaces de navegación
         Anchor home      = new Anchor("#" + SectionId.HERO.get(), "Inicio");
         Anchor services  = new Anchor("#" + SectionId.SERVICES.get(), "Servicios");
         Anchor products  = new Anchor("#" + SectionId.PRODUCTS.get(), "Productos");
@@ -26,16 +26,6 @@ public class HeaderComponent extends HorizontalLayout {
                     .set("text-decoration", "none");
         }
 
-        HorizontalLayout center = new HorizontalLayout(home, services, products, about, community, contact);
-        center.setAlignItems(Alignment.CENTER);
-        center.setJustifyContentMode(JustifyContentMode.CENTER);
-        center.setWidthFull();
-
-        // Header layout
-        add(logo, center);
-        setAlignItems(Alignment.CENTER);
-        setSpacing(true);
-        setWidthFull();
-        addClassName("main-header");
+        add(home, services, products, about, community, contact);
     }
 }

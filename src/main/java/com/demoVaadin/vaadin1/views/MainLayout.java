@@ -1,6 +1,6 @@
 package com.demoVaadin.vaadin1.views;
 
-import com.demoVaadin.vaadin1.components.HeaderComponent;
+import com.demoVaadin.vaadin1.sections.Header;
 import com.demoVaadin.vaadin1.sections.*;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.router.PageTitle;
@@ -13,7 +13,7 @@ public class MainLayout extends AppLayout {
 
     public MainLayout() {
         // Header con logo, enlaces y menú responsive
-        addToNavbar(new HeaderComponent());
+        addToNavbar(new Header());
 
         // Contenedor principal del cuerpo
         VerticalLayout body = new VerticalLayout();

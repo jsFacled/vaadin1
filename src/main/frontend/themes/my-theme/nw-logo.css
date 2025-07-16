@@ -1,19 +1,23 @@
 /* Bloque principal del logo */
 .logo {
   display: flex;
+  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0;
+  }
+
+.logo__iconContainer {
+  display: flex;
+  align-items: center;
 }
 
 .logo__icon {
   height: 40px;
+    display: block;
 }
 
-.logo__icon--2d {
-  /* variante 2D si necesitás estilos distintos */
-}
 
 .logo__icon--animated {
   animation: spin 6s linear infinite;
@@ -24,17 +28,33 @@
   100% { transform: rotate(360deg); }
 }
 
-.logo__text {
+.logo__name {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
 }
+
 .logo__description {
-  color: white;
+  color: #ffd700; /* dorado suave */
   font-size: 0.8rem;
-  font-weight: normal;
+  font-weight: 300;
   font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+
+.logo__text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinear el texto a la izquierda */
+}
+
+.footer .logo__description {
+  display: none !important;
 }
 
 .logo__link {
@@ -72,16 +92,25 @@
   pointer-events: none;
 }
 
+/*Desktop*/
+@media (min-width: 769px) {
+  .logo {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .logo {
-    flex-direction: column;
-  }
 
-  .logo__text {
+
+  .logo__name {
     font-size: 1.2rem;
     text-align: center;
     width: 100%;
+  }
+  .logo__description {
+    display: none;
   }
 
   .logo--3d-container {
@@ -89,8 +118,5 @@
     height: 80px !important;
   }
 
-  .logo__info {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
+
 }
