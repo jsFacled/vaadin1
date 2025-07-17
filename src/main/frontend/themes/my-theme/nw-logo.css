@@ -17,7 +17,7 @@ box-sizing: border-box;
 .logo__icon {
   display: inline-block;
      max-height: 90px;
-    width: auto;
+     min-height: 30px;
      height: auto;
     max-width: 100%;
 }
