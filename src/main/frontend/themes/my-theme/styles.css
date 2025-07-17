@@ -1,5 +1,13 @@
 @import "nw-logo.css";
 
+/*****************   Estilos genereales   *******************/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+/*****************   Estilos por Elementos html   *******************/
 
 html {
   scroll-behavior: smooth;
@@ -56,10 +64,14 @@ a {
   color: white;
 }
 
-#services, #products, #community, #contact, #about {
-  background-color: #1A1F3C;
-}
+#services, #products, #community,  #about {
+  /*background-color: #1A1F3C;*/
+  background-color: #EBE0F7;
 
+}
+#contact{
+background-color: #EBE0F7;
+}
 .main-header {
   position: sticky;
   top: 0;

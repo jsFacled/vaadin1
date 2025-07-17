@@ -21,7 +21,6 @@ public class Logo2DComponent extends HorizontalLayout {
         Div iconContainer = new Div();
         iconContainer.addClassName("logo__iconContainer");
         Image icon = new Image("images/Icono-sinFondo-ChatGPT.png", "Neticware Logo");
-        icon.setHeight("40px");
         icon.addClassNames("logo__icon", "logo__icon--animated");
         Anchor logoLink = new Anchor("/", icon);
         logoLink.addClassName("logo__link");
