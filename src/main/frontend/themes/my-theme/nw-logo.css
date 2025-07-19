@@ -1,28 +1,43 @@
 /* Bloque principal del logo */
 .logo {
-box-sizing: border-box;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
   gap: 0.5rem;
   margin: 1rem 0;
-  }
+}
 
 .logo__iconContainer {
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 .logo__icon {
   display: inline-block;
-     max-height: 90px;
-     min-height: 30px;
-     height: auto;
-    max-width: 100%;
+  height: clamp(30px, 30vw, 90px);
+  width: auto;
+  transition: transform 1s ease-out;
 }
 
+/* ============================================
+   🔁 Animación al hacer hover (gira rápido 4 vueltas y se detiene)
+   ============================================ */
+.logo__icon:hover {
+  animation: spin-fast 1s ease-out 1 forwards;
+}
 
+@keyframes spin-fast {
+  0%   { transform: rotate(0deg); }
+  90%  { transform: rotate(1440deg); }
+  100% { transform: rotate(1440deg); }
+}
+
+/* ============================================
+   🔒 Animación original al cargar (comentada)
+   ============================================ */
+/*
 .logo__icon--animated {
   animation: spin 6s linear infinite;
 }
@@ -31,6 +46,7 @@ box-sizing: border-box;
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+*/
 
 .logo__name {
   color: white;
@@ -41,7 +57,7 @@ box-sizing: border-box;
 }
 
 .logo__description {
-  color: #ffd700; /* dorado suave */
+  color: #ffd700;
   font-size: 0.6rem;
   font-weight: 300;
   font-family: 'Poppins', sans-serif;
@@ -54,7 +70,7 @@ box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Alinear el texto a la izquierda */
+  align-items: flex-start;
 }
 
 .footer .logo__description {
@@ -96,7 +112,7 @@ box-sizing: border-box;
   pointer-events: none;
 }
 
-/*Desktop*/
+/* Desktop */
 @media (min-width: 769px) {
   .logo {
     flex-direction: row;
@@ -106,13 +122,12 @@ box-sizing: border-box;
 
 /* Responsive */
 @media (max-width: 768px) {
-
-
   .logo__name {
     font-size: 1.2rem;
     text-align: center;
     width: 100%;
   }
+
   .logo__description {
     display: none;
   }
@@ -121,6 +136,4 @@ box-sizing: border-box;
     width: 120px !important;
     height: 80px !important;
   }
-
-
 }
