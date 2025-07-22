@@ -7,18 +7,32 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 public class Header extends HorizontalLayout {
 
     public Header() {
-        addClassName("main-header");
+       addClassName("main-header");
         setWidthFull();
-        setAlignItems(Alignment.CENTER);
-        setSpacing(true);
-        setPadding(true);
+        setSpacing(false);
+        setPadding(false);
 
+        // Componentes principales
         Logo2DComponent logo = new Logo2DComponent();
         NavbarComponent navbar = new NavbarComponent();
+        HamburgerMenuComponent hamburgerMenu = new HamburgerMenuComponent();
 
-        add(logo, navbar);
+        // Botón hamburguesa
+        Button hamburger = new Button("☰");
+        hamburger.addClassName("hamburger-button");
+        hamburger.addClickListener(e -> hamburgerMenu.showMenu());
 
-        setFlexGrow(0, logo);
-        setFlexGrow(1, navbar);
+        // Top bar horizontal
+        HorizontalLayout topBar = new HorizontalLayout(logo, navbar, hamburger);
+        topBar.setWidthFull();
+        topBar.setAlignItems(Alignment.CENTER);
+        topBar.setJustifyContentMode(JustifyContentMode.BETWEEN);
+
+        topBar.setFlexGrow(0, logo);
+        topBar.setFlexGrow(1, navbar);
+        topBar.setFlexGrow(0, hamburger);
+
+        // Estructura general
+        add(topBar, hamburgerMenu);
     }
 }
