@@ -11,6 +11,8 @@ public class HeroSection extends VerticalLayout {
         setId(SectionId.HERO.get());
         addClassName("hero");
 
+  getStyle().set("background-image", " url('images/0823_Digital Innovation Display_simple_compose.png')");
+
         H1 title = new H1("Transformá tus ideas en soluciones digitales");
         Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
 
