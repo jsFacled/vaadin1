@@ -30,7 +30,7 @@ a {
 }
 
 .hero {
-  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+   background-image: url('images/0823_Digital Innovation Display_simple_compose.png');
   color: white;
   padding: 5em 2em;
   text-align: center;
