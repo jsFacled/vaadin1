@@ -10,7 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Logo2DComponent extends HorizontalLayout {
 
-    public Logo2DComponent() {
+    public Logo2DComponent(String animationClass)) {
         addClassName("logo");
         setSpacing(true); // Añade espacio entre el icono y el texto
         setAlignItems(Alignment.CENTER);//Aliniación vertical:centrado
@@ -21,7 +21,7 @@ public class Logo2DComponent extends HorizontalLayout {
         Div iconContainer = new Div();
         iconContainer.addClassName("logo__iconContainer");
         Image icon = new Image("images/Icono-sinFondo-ChatGPT.png", "Neticware Logo");
-        icon.addClassNames("logo__icon", "logo__icon--animated");
+        icon.addClassNames("logo__icon",  animationClass);
         Anchor logoLink = new Anchor("/", icon);
         logoLink.addClassName("logo__link");
         iconContainer.add(logoLink);

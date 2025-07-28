@@ -16,7 +16,8 @@ public class Header extends HorizontalLayout {
         setPadding(false);
 
         // Componentes principales
-        Logo2DComponent logo = new Logo2DComponent();
+        Logo2DComponent logo = new Logo2DComponent("logo__icon--animated");
+    
         NavbarComponent navbar = new NavbarComponent();
         HamburgerMenuComponent hamburgerMenu = new HamburgerMenuComponent();
 
