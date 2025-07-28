@@ -34,6 +34,9 @@
   100% { transform: rotate(1440deg); }
 }
 
+.logo__icon--footer-spin {
+  animation: spin 6s linear infinite;
+}
 /* ============================================
    🔒 Animación original al cargar (comentada)
    ============================================ */
@@ -41,12 +44,11 @@
 .logo__icon--animated {
   animation: spin 6s linear infinite;
 }
-
+*/
 @keyframes spin {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-*/
 
 .logo__name {
   color: white;
