@@ -11,7 +11,7 @@ public class Footer extends VerticalLayout {
         setAlignItems(Alignment.CENTER);
         setSpacing(true);
 
-        add(new Logo2DComponent());
+        add(new Logo2DComponent("logo__icon--footer-spin"));
         add(new Paragraph("Website | Mobile | SaaS "));
         add(new Paragraph("© 2025 NETICWARE | Desarrollo de Software | Todos los derechos reservados"));
 
