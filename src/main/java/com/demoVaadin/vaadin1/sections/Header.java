@@ -1,7 +1,9 @@
 package com.demoVaadin.vaadin1.sections;
 
+import com.demoVaadin.vaadin1.components.HamburgerMenuComponent;
 import com.demoVaadin.vaadin1.components.Logo2DComponent;
 import com.demoVaadin.vaadin1.components.NavbarComponent;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 public class Header extends HorizontalLayout {
