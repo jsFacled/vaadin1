@@ -10,7 +10,7 @@ import com.vaadin.flow.component.html.Span;
 @Tag("div")
 @JsModule("https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js")
 @JsModule("./js/nw-logo-3d-2.js")
-@CssImport("themes/my-theme/nw-logo.css")
+@CssImport("themes/nw-base/nw-logo.css")
 public class Logo3D2Component extends Composite<Div> {
 
     public Logo3D2Component() {

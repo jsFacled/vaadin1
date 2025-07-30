@@ -10,7 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Logo2DComponent extends HorizontalLayout {
 
-    public Logo2DComponent(String animationClass)) {
+    public Logo2DComponent(String animationClass) {
         addClassName("logo");
         setSpacing(true); // Añade espacio entre el icono y el texto
         setAlignItems(Alignment.CENTER);//Aliniación vertical:centrado
