@@ -1,7 +1,7 @@
 import { injectGlobalCss } from 'Frontend/generated/jar-resources/theme-util.js';
 
 import { css, unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin';
-import $cssFromFile_0 from 'Frontend/themes/my-theme/nw-logo.css?inline';
+import $cssFromFile_0 from 'Frontend/themes/nw-base/nw-logo.css?inline';
 import '@vaadin/polymer-legacy-adapter/style-modules.js';
 import '@vaadin/vertical-layout/theme/lumo/vaadin-vertical-layout.js';
 import '@vaadin/horizontal-layout/theme/lumo/vaadin-horizontal-layout.js';

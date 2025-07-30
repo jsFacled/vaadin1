@@ -1,4 +1,6 @@
 @import "nw-logo.css";
+@import "hamburger-menu.css";
+@import "hero-pruebas.css";
 
 /*****************   Estilos genereales   *******************/
 *, *::before, *::after {
@@ -29,11 +31,22 @@ a {
   text-decoration: none;
 }
 
+/* ###############   HERO SECTION   ############### */
+
 .hero {
-  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+/*   background-image: url('images/Display_simple_compose.png');*/
+/*
+   background-image: url('images/gpt-teclado-icono-mano.png');
+*/
+
+   background-image: url('images/hero-escritorio.png');
+
   color: white;
   padding: 5em 2em;
   text-align: center;
+}
+.hero h1{
+color:#00AAAA;
 }
 
 .cta-button {
@@ -50,6 +63,8 @@ a {
 .cta-button:hover {
   transform: scale(1.03);
 }
+
+
 
 .section {
   padding: 3em 2em;
