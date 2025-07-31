@@ -8,7 +8,7 @@ import com.vaadin.flow.component.html.Paragraph;
 
 public class PruHeroSection2 extends Div {
  public PruHeroSection2() {
-        setId(SectionId.HERO.get());
+
      addClassNames("hs2", "hs-pru");
 
        H1 title = new H1("Transformá tus ideas en soluciones digitales");

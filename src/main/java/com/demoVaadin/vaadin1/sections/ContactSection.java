@@ -8,6 +8,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class ContactSection extends VerticalLayout {
     public ContactSection() {
         setId(SectionId.CONTACT.get());
+        addClassNames("contact", "section");
 
         add(new ContactFormComponent());
     }

@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class HeroSection extends VerticalLayout {
  public HeroSection() {
         setId(SectionId.HERO.get());
-        addClassName("hero");
+        addClassNames("hero", "section");
 
         //getStyle().set("background-image", " url('images/0823_Digital Innovation Display_simple_compose.png')");
 

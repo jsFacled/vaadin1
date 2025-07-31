@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class ServicesSection extends VerticalLayout {
     public ServicesSection() {
         setId(SectionId.SERVICES.get());
-
+        addClassNames("services", "section");
         add(new H2("Nuestros Servicios"));
         add(new Paragraph("• Desarrollo de aplicaciones web con Vaadin y Spring Boot."));
         add(new Paragraph("• Aplicaciones móviles."));

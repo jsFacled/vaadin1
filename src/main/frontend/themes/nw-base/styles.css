@@ -31,6 +31,27 @@ a {
   text-decoration: none;
 }
 
+/* ###############  HEADER SECTION   ############### */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #0A1C3D;
+  padding: 1em 2em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
 /* ###############   HERO SECTION   ############### */
 
 .hero {
@@ -73,6 +94,11 @@ color:#00AAAA;
   margin: 1em 0;
 }
 
+#contact{
+background-color: #EBE0F7;
+}
+
+/* ###############   FOOTER SECTION   ############### */
 .footer {
   background-color: #010007;
   background-color: #23272f;
@@ -80,26 +106,13 @@ color:#00AAAA;
   font-size: 1rem;
 }
 
-#services, #products, #community,  #about {
-  /*background-color: #1A1F3C;*/
-  background-color: #EBE0F7;
+/*  ##################################################################### */
+/*  ##########################     @ MEDIA     ########################## */
+/*  ##################################################################### */
 
-}
-#contact{
-background-color: #EBE0F7;
-}
-.main-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #0A1C3D;
-  padding: 1em 2em;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-  flex-wrap: wrap;
+@media (max-width: 768px) {
+  .navbar {
+    display: none;;
+  }
+
 }

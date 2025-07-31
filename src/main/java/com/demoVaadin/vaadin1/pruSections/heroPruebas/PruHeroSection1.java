@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class PruHeroSection1 extends Div {
  public PruHeroSection1() {
-        setId(SectionId.HERO.get());
+
         addClassNames("hs1", "hs-pru");
 
        H1 title = new H1("Transformá tus ideas en soluciones digitales");
