@@ -72,6 +72,7 @@ color: #FF4500; /* Naranja vibrante */
   justify-content: flex-start;
   padding-left: 5%;
 
+
 }
 
 .hs3-content {
@@ -79,6 +80,11 @@ color: #FF4500; /* Naranja vibrante */
   background-color: rgba(0, 0, 0, 0.3); /* opcional: fondo semitransparente */
   padding: 2em;
   border-radius: 12px;
+
+      background-color: #000000;
+      opacity: 0.50;
+      mix-blend-mode: luminosity;
+      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 
 .hs3-content h1 {

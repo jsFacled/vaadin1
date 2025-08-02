@@ -1,7 +1,7 @@
 package com.demoVaadin.vaadin1.components;
 
 
-import com.demoVaadin.vaadin1.views.MainLayout;
+import com.demoVaadin.vaadin1.Layouts.MainLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.dependency.JsModule;

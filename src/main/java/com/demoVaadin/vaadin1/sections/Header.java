@@ -3,6 +3,7 @@ package com.demoVaadin.vaadin1.sections;
 import com.demoVaadin.vaadin1.components.Logo2DComponent;
 import com.demoVaadin.vaadin1.components.NavbarComponent;
 import com.demoVaadin.vaadin1.components.HamburgerMenuComponent;
+import com.demoVaadin.vaadin1.components.TestButton;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -11,6 +12,12 @@ public class Header extends HorizontalLayout {
 
     public Header() {
      addClassName("main-header");
+
+       //--------------------------------
+       // Para pruebas agrego testbutton
+       TestButton tb = new TestButton();
+       //----------------------------------
+
         setWidthFull();
         setSpacing(false);
         setPadding(false);
@@ -27,7 +34,7 @@ public class Header extends HorizontalLayout {
         hamburger.addClickListener(e -> hamburgerMenu.showMenu());
 
         // Top bar horizontal
-        HorizontalLayout topBar = new HorizontalLayout(logo, navbar, hamburger);
+        HorizontalLayout topBar = new HorizontalLayout(logo, tb, navbar, hamburger);
         topBar.setWidthFull();
         topBar.setAlignItems(Alignment.CENTER);
         topBar.setJustifyContentMode(JustifyContentMode.BETWEEN);
@@ -35,6 +42,7 @@ public class Header extends HorizontalLayout {
         topBar.setFlexGrow(0, logo);
         topBar.setFlexGrow(1, navbar);
         topBar.setFlexGrow(0, hamburger);
+
 
         // Estructura general
         add(topBar, hamburgerMenu);
