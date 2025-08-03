@@ -60,12 +60,21 @@ a {
 /*
    background-image: url('./images/gpt-teclado-icono-mano.png');
 */
+background-image: url('./images/herosection1.png');
+ background-image: url('./images/Display_simple_compose.png');
+  background-image: url('./images/Gemini_tablet.png');
+   background-image: url('./images/sora-mano-icono-tablet.png');
+    background-image: url('./images/');
+background-image: url('images/gpt-teclado-icono-mano.png');
 
-   background-image: url('./images/hero-escritorio.png');
+  background-size: cover;        /* Abarca todo el div */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite la imagen */
+    width: 100%;
 
-  color: white;
-  padding: 5em 2em;
-  text-align: center;
+    height: 100vh; /* 🔹 Opción 1: ocupa toda la altura visible de la pantalla */
+    /* height: auto; */ /* 🔸 Opción 2 (comentada): se ajusta a la altura del contenido */
+
 }
 .hero h1{
 color:#00AAAA;
