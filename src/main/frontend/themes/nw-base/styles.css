@@ -60,11 +60,11 @@ a {
 /*
    background-image: url('./images/gpt-teclado-icono-mano.png');
 */
-background-image: url('./images/herosection1.png');
- background-image: url('./images/Display_simple_compose.png');
-  background-image: url('./images/Gemini_tablet.png');
-   background-image: url('./images/sora-mano-icono-tablet.png');
-    background-image: url('./images/');
+background-image: url('images/herosection1.png');
+ background-image: url('images/Display_simple_compose.png');
+  background-image: url('images/Gemini_tablet.png');
+   background-image: url('images/sora-mano-icono-tablet.png');
+    background-image: url('images/sora-m-i-t.png');
 background-image: url('images/gpt-teclado-icono-mano.png');
 
   background-size: cover;        /* Abarca todo el div */
