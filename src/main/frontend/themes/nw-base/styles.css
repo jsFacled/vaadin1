@@ -56,12 +56,12 @@ a {
 /* ###############   HERO SECTION   ############### */
 
 .hero {
-/*   background-image: url('/images/Display_simple_compose.png');*/
+/*   background-image: url('./images/Display_simple_compose.png');*/
 /*
-   background-image: url('/images/gpt-teclado-icono-mano.png');
+   background-image: url('./images/gpt-teclado-icono-mano.png');
 */
 
-   background-image: url('/images/hero-escritorio.png');
+   background-image: url('./images/hero-escritorio.png');
 
   color: white;
   padding: 5em 2em;
