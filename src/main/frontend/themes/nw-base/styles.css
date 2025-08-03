@@ -121,8 +121,20 @@ background-color: #EBE0F7;
 /*  ##################################################################### */
 
 @media (max-width: 768px) {
+ .main-header {
+    padding: 0.1em 1em; /* 🔽 reduce el alto */
+  }
+
+  .logo__text {
+    font-size: 1rem;
+  }
+
+  .hamburger-button {
+    font-size: 1.5rem; /* opcional: achica el botón */
+  }
+
   .navbar {
-    display: none;;
+    display: none;
   }
 
 }
