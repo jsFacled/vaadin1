@@ -11,12 +11,15 @@ public class PruHeroSection2 extends Div {
 
      addClassNames("hs2", "hs-pru");
 
+     Div content = new Div();
+     content.addClassName("hs3-content");
+
        H1 title = new H1("Transformá tus ideas en soluciones digitales");
-        Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
+       Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
+       Button cta = new Button("Hablemos de tu idea →");
+       cta.addClassName("cta-button");
 
-        Button cta = new Button("Hablemos de tu idea →");
-        cta.addClassName("cta-button");
-
-        add(title, subtitle, cta);
+     content.add(title, subtitle, cta);
+     add(content);
     }
 }

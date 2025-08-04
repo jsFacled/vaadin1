@@ -11,18 +11,50 @@ padding:10px;
 }
 
 /* ###############   HS 2  ############### */
+.hs2 {
 
-.hs2{
+ background-image: url('./images/herosection1.png');
  background-image: url('./images/Display_simple_compose.png');
+  background-image: url('./images/Gemini_tablet.png');
+   background-image: url('./images/sora-mano-icono-tablet.png');
 
-   background-size: cover;        /* Abarca todo el div */
-     background-position: center;   /* Centra la imagen */
-     background-repeat: no-repeat;  /* No repite la imagen */
-     width: 100%;
+background-image: url('images/gpt-teclado-icono-mano.png');
+ background-image: url('images/sora-m-i-t.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex; /* clave */
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;
 
-     height: 100vh; /* 🔹 Opción 1: ocupa toda la altura visible de la pantalla */
-     /* height: auto; */ /* 🔸 Opción 2 (comentada): se ajusta a la altura del contenido */
 
+}
+
+.hs2-content {
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.3); /* opcional: fondo semitransparente */
+  padding: 2em;
+  border-radius: 12px;
+
+      background-color: #000000;
+      opacity: 0.50;
+      mix-blend-mode: luminosity;
+      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.hs2-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color:white;
+}
+
+.hs2-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 
@@ -33,10 +65,11 @@ padding:10px;
  background-image: url('./images/herosection1.png');
  background-image: url('./images/Display_simple_compose.png');
   background-image: url('./images/Gemini_tablet.png');
-   background-image: url('./images/sora-mano-icono-tablet.png');
+
 
 background-image: url('images/gpt-teclado-icono-mano.png');
  background-image: url('images/sora-m-i-t.png');
+ background-image: url('./images/g-mit1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,6 +107,7 @@ background-image: url('images/gpt-teclado-icono-mano.png');
   line-height: 1.5;
 }
 
+/*************************************/
 .cta-button {
   background-color: #1F6BFF;
   color: white;
