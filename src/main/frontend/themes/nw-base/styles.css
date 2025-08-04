@@ -34,6 +34,19 @@ a {
 
 /* ###############  HEADER SECTION   ############### */
 
+/* Valor por defecto para escritorio y tablets verticales */
+:root {
+  --navbar-height: 80px;
+}
+
+
+////////
+vaadin-app-layout::part(navbar) {
+    height: 80px ;
+    min-height: 40px ;
+    padding: 1 ;
+  }
+
 .main-header {
   position: sticky;
   top: 0;
@@ -119,10 +132,9 @@ background-color: #EBE0F7;
 /*  ##################################################################### */
 /*  ##########################     @ MEDIA     ########################## */
 /*  ##################################################################### */
-
 @media (max-width: 768px) {
- .main-header {
-    padding: 0.1em 1em; /* 🔽 reduce el alto */
+  .main-header {
+    padding: 0.1em 1em;
   }
 
   .logo__text {
@@ -130,11 +142,25 @@ background-color: #EBE0F7;
   }
 
   .hamburger-button {
-    font-size: 1.5rem; /* opcional: achica el botón */
+    font-size: 1.5rem;
   }
 
   .navbar {
     display: none;
   }
+}
 
+/* 🔽 Más específico: horizontal solamente */
+/*  ##################################################################### */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  vaadin-app-layout::part(navbar) {
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+  }
+
+  .main-header {
+    padding: 0.1em 0.5em !important;
+  }
 }
