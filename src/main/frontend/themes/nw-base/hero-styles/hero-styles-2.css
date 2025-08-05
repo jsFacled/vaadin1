@@ -1,0 +1,55 @@
+.hero {
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:
+  width: 100%;
+  height: calc(100vh - 56px); /* Ajusta para compensar el header */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 3px solid #f0f0f0;
+  border-radius: 10px;
+  margin: 20px 0; /* Combina margin-top y margin-bottom */
+}
+
+.hero-content {
+  max-width: 28rem;
+  background-color: rgba(10, 28, 61, 0.3); /* Color de fondo más coherente con el tema */
+  padding: em;
+  margin-top: 1.5em; /* Ajuste para mejor alineación */
+  margin-left: 0.5em;
+  border-radius: 12px;
+  transition: opacity 0.3s ease; /* Simplifica la transición */
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #00AAAA; /* Color acorde al diseño */
+  font-family: 'Poppins', sans-serif; /* Fuente consistente con el tema */
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #E0E0E0; /* Color de texto más legible */
+  font-family: 'Inter', sans-serif; /* Fuente consistente con el tema */
+}
+
+.cta-button {
+  background-color: #1F6BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.03);
+}

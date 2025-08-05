@@ -1,0 +1,67 @@
+/* ###############   HERO SECTION   ############### */
+.hero {
+
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: 3px solid #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Contenedor de texto sobre imagen */
+.hero-content {
+  max-width: 100%;
+  margin: 2em;
+  padding: 2em;
+  border-radius: 16px;
+
+  background-color: rgba(10, 10, 25, 0.4); /* violeta azulado semitransparente */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+/* Título */
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #e0e0ff;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #000000aa;
+}
+
+/* Párrafo */
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #d0d0e0;
+}
+
+/* Botón de acción */
+.cta-button {
+  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(31, 107, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(31, 107, 255, 0.4);
+}

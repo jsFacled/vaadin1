@@ -1,0 +1,55 @@
+.hero {
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex; /* clave */
+  align-items: flex-start;
+  justify-content: flex-start;
+ border: 3px solid #f0f0f0; /* Tu borde */
+  border-radius: 10px; /* Redondea las 4 esquinas con un radio de 10 píxeles */
+   margin-bottom: 20px;
+   margin-top: 20px;
+
+}
+
+.hero-content {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2em;
+  margin-top: 1em;
+  border-radius: 12px;
+  background-color: #000000;
+  opacity: 0.6;
+  mix-blend-mode: luminosity;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #1F6BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.03);
+}

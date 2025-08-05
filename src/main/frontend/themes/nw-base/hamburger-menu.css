@@ -52,20 +52,15 @@
   .hamburger-button {
     display: block;
   }
-}
-
-/* 🔽 Modo horizontal móvil: menú más compacto */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hamburger-button {
     font-size: 1.2rem;
-    padding: 0.2em;
-  }
+      padding: 0.2em;
 
   .hamburger-menu {
     width: 180px;
     padding: 1em 0.5em;
   }
 }
+
 .hamburger-menu {
   position: fixed;
   top: 0;
@@ -122,18 +117,12 @@
 @media (max-width: 768px) {
   .hamburger-button {
     display: block;
+     font-size: 1.2rem;
+        padding: 0.2em;
   }
-}
-
-/* 🔽 Modo horizontal móvil: menú más compacto */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hamburger-button {
-    font-size: 1.2rem;
-    padding: 0.2em;
-  }
-
   .hamburger-menu {
-    width: 180px;
-    padding: 1em 0.5em;
-  }
+      width: 180px;
+      padding: 1em 0.5em;
+    }
 }
+

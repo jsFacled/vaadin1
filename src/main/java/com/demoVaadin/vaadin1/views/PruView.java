@@ -3,7 +3,6 @@ package com.demoVaadin.vaadin1.views;
 
 import com.demoVaadin.vaadin1.Layouts.MainLayout;
 import com.demoVaadin.vaadin1.pruSections.heroPruebas.PruHeroSection2;
-import com.demoVaadin.vaadin1.pruSections.heroPruebas.PruHeroSection3;
 import com.demoVaadin.vaadin1.sections.Footer;
 import com.demoVaadin.vaadin1.sections.HeroSection;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -21,8 +20,7 @@ public class PruView extends VerticalLayout {
 
         add(
                 new HeroSection(),
-                  new PruHeroSection2(),
-                new PruHeroSection3(),
+                new PruHeroSection2(),
                 new Footer()
         );
     }
