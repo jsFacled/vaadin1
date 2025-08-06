@@ -10,23 +10,17 @@ public class HeroSection extends VerticalLayout {
         setId(SectionId.HERO.get());
         addClassNames("hero", "section");
 
-        // Capa de fondo con background-image vía CSS
-        Div backgroundLayer = new Div();
-        backgroundLayer.addClassName("hero-background-layer");
-
-        // Contenido textual
-        Div content = new Div();
-        content.addClassName("hero-content");
-
         H1 title = new H1("Transformá tus ideas en soluciones digitales");
+
         Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
 
         Button cta = new Button("Hablemos de tu idea →");
-        cta.addClassName("cta-button");
+        cta.addClassName("hero-cta");
 
-        content.add(title, subtitle, cta);
 
-        // Agrego el fondo y luego el contenido
-        add(backgroundLayer, content);
+        Div content = new Div(subtitle, cta);
+        content.addClassName("hero-content");
+
+        add(title, content);
     }
 }
