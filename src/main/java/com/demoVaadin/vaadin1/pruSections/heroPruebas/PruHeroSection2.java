@@ -7,19 +7,20 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Paragraph;
 
 public class PruHeroSection2 extends Div {
- public PruHeroSection2() {
+    public PruHeroSection2() {
+        setId(SectionId.HERO.get());
+        addClassNames("hs2", "hs-pru");
 
-     addClassNames("hs2", "hs-pru");
+        H1 title = new H1("Transformá tus ideas en soluciones digitales");
 
-     Div content = new Div();
-     content.addClassName("hs3-content");
+        Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
 
-       H1 title = new H1("Transformá tus ideas en soluciones digitales");
-       Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
-       Button cta = new Button("Hablemos de tu idea →");
-       cta.addClassName("cta-button");
+        Button cta = new Button("Hablemos de tu idea →");
 
-     content.add(title, subtitle, cta);
-     add(content);
+
+        Div content = new Div(subtitle, cta);
+        content.addClassName("hs2-content");
+
+        add(title, content);
     }
 }

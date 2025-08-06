@@ -1,46 +1,47 @@
 /* ###############   HERO SECTION   ############### */
 .hero {
-  background-size: cover;           /* Escala fondo y degradado para cubrir */
-  background-position: center;      /* Centrado */
-  background-repeat: no-repeat;     /* Sin repetición */
-  background-attachment: fixed;     /* Fijo, evita distorsión con zoom */
-
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
-  border: 3px solid #f0f0f0;
+  overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  position: relative;               /* Necesario para que ::before funcione bien */
+  margin: 20px 0;
 }
 
-/* Degradado superpuesto encima del fondo */
+/* ✅ Fondo como div con background-image */
+.hero-background-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url("images/escritorio-hello-user.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Capa de degradado */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(10, 28, 61, 0));
-  z-index: 0;
+  z-index: 1;
 }
 
-/* Contenedor de texto sobre imagen */
+/* Contenedor del contenido */
 .hero-content {
-  position: relative;               /* Por encima del degradado */
-  z-index: 1;
-
+  position: relative;
+  z-index: 2;
   max-width: 100%;
   margin: 2em;
   padding: 2em;
   border-radius: 16px;
-
-  background-color: rgba(10, 10, 25, 0.4); /* Violeta semitransparente */
+  background-color: rgba(10, 10, 25, 0.4);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 
 /* Título */
@@ -60,7 +61,7 @@
   color: #d0d0e0;
 }
 
-/* Botón de acción */
+/* Botón */
 .cta-button {
   background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
   color: white;

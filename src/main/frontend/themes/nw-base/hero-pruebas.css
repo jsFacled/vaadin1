@@ -1,6 +1,8 @@
 /*
  src/main/frontend/themes/hero-pruebas.css
 */
+
+/*Atributos generales de herosection*/
 .hs-pru{
 padding:10px;
  border: 3px solid #f0f0f0; /* Tu borde */
@@ -11,66 +13,73 @@ padding:10px;
 }
 
 /* ###############   HS 2  ############### */
+/* General para Hero */
 .hs2 {
-
- background-image: url('./images/herosection1.png');
- background-image: url('./images/Display_simple_compose.png');
-  background-image: url('./images/Gemini_tablet.png');
-   background-image: url('./images/sora-mano-icono-tablet.png');
-
-background-image: url('images/gpt-teclado-icono-mano.png');
- background-image: url('images/sora-m-i-t.png');
+  background-image: url("images/escritorio-bottom-colores.png");
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: 100vh;
-  display: flex; /* clave */
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 5%;
 
-
-}
-
-
-.hs2-content {
-  max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.3); /* opcional: fondo semitransparente */
+  display: flex;
+  flex-direction: column;
+  position: relative;
   padding: 2em;
+}
+
+/* Título arriba */
+.hs2 h1 {
+  font-size: 4rem;
+  margin: 1rem 0 2rem 0;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  align-self: center;
+  background-color: rgba(10, 10, 25, 0.1); /* violeta azulado semitransparente */
+
+
+}
+
+/* Contenedor para subtítulo + botón */
+.hs2 .hs2-content {
+  width: 30em;
+  height: 20em;
+  margin: 5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔥 Distribuye: uno arriba, uno abajo */
+  align-items: flex-start;
+  align-self: flex-start;
+  color: white;
   border-radius: 12px;
-
-      background-color: #000000;
-      opacity: 0.50;
-      mix-blend-mode: luminosity;
-      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  background-color: rgba(10, 10, 25, 0.4);
+  padding: 1.5em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
-.hs2-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color:white;
-}
-
-.hs2-content p {
-  font-size: 1.1rem;
+/* Subtítulo */
+.hs2 p {
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  max-width: 600px;
+  text-align: left;
 }
 
-
-/*************************************/
-.cta-button {
-  background-color: #1F6BFF;
+/* Botón */
+.hs2 button {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
+  padding: 0.6em 1.2em;
+  font-size: 0.9em;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(31, 107, 255, 0.3);
+  max-width: fit-content;
+  margin-top: 1rem;
 }
-
-.cta-button:hover {
+.hs2 button:hover {
   transform: scale(1.03);
 }
