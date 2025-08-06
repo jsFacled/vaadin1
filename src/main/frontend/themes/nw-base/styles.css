@@ -93,20 +93,19 @@ vaadin-app-layout::part(navbar) {
 }
 .hero{
 
- background-image: url('images/herosection1.png');
- background-image: url('images/Display_simple_compose.png');
+
  background-image: url('images/Gemini_tablet.png');
  background-image: url('images/gpt-teclado-icono-mano.png');
- background-image: url('images/sora-m-i-t.png');
- background-image: url('images/escritorio-bottom-1.png');
- background-image: url('images/escritorio-bottom-2.png');
  background-image: url('images/escritorio-bottom-3.png');
  background-image: url('images/escritorio-bottom-admin.png');
  background-image: url('images/escritorio-bottom-fondo.png');
  background-image: url('images/escritorio-bottom-colores.png');
-
  background-image: url('images/escritorio-bottom-violeta.png');
-
+  background-image: url('images/escritorio-hello-november.png');
+  background-image: url('images/escritorio-hello-user.png');
+ background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(10, 28, 61, 0.3) 40%, rgba(10, 28, 61, 0) 80%),
+    url('VAADIN/themes/nw-base/images/escritorio-hello-user.png');
 }
 /* ################################################ */
 
