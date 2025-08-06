@@ -36,7 +36,7 @@ padding:10px;
 /* ---- ---- ---- Título principal ---- ---- ---- */
 
 .hs2 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 1rem 0 2rem 0;
   color: white;
   text-shadow: 1px 1px 2px black;
@@ -65,7 +65,7 @@ padding:10px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 5rem;
+  margin-top: 4.5rem;
 
   color: white;
   border-radius: 12px;
@@ -91,21 +91,17 @@ padding:10px;
 }
 
 
-/* ---- ---- ----  /* Botón */ ---- ---- ---- */
-
 /* ---- Botón - Contenedor principal ---- */
 .hs2 .hs2-cta {
   position: relative;
   overflow: hidden;
 
-  /* ✅ Cambio 1: Usa un fondo semi-transparente para darle profundidad */
+  /* El fondo principal es un color sólido o semitransparente para que sea visible sin hover */
   background-color: rgba(31, 107, 255, 0.2);
 
   color: white;
-
-  /* ✅ Cambio 2: Usa un borde sólido y visible */
+  /* El borde es visible en el estado normal */
   border: 2px solid #1F6BFF;
-
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 0.9em;
@@ -118,7 +114,7 @@ padding:10px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
 }
 
-/* ---- Pseudo-elemento con el fondo estático del botón ---- */
+/* ---- Pseudo-elemento con el fondo de degradado (ahora en el hover) ---- */
 .hs2 .hs2-cta::before {
   content: "";
   position: absolute;
@@ -127,25 +123,26 @@ padding:10px;
   width: 100%;
   height: 100%;
   border-radius: 8px;
-
-  /* El fondo de degradado ahora aparece con el hover para no competir */
   background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
   z-index: -1;
-  transform: scale(0); /* Oculto por defecto */
+  /* El degradado se oculta por defecto y aparece al hacer hover */
+  transform: scale(0);
   transition: transform 0.3s ease-in-out;
 }
 
-/* ---- Pseudo-elemento con el borde animado (ajuste de nombres) ---- */
+/* ---- Pseudo-elemento con el borde animado (conic-gradient) ---- */
 .hs2 .hs2-cta::after {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 10px;
+  /* Ajuste a 0px para que el borde se vea más sutil */
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 8px; /* Mismo radio que el botón para un ajuste perfecto */
   background: conic-gradient(from 0deg, #1F6BFF, #8B5CF6, #1F6BFF);
   z-index: -2;
+  /* Oculto por defecto, aparece con hover */
   transform: scale(0);
   opacity: 0;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -155,8 +152,8 @@ padding:10px;
 .hs2 .hs2-cta:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(31, 107, 255, 0.4);
-  /* ✅ Cambio 3: Al hacer hover, el fondo se vuelve más opaco o cambia de color */
-  background-color: transparent; /* O el color de tu preferencia */
+  /* El fondo principal se vuelve transparente al hacer hover */
+  background-color: transparent;
 }
 
 /* ---- ESTADO HOVER: se muestra el fondo de degradado ---- */
@@ -179,7 +176,6 @@ padding:10px;
     transform: rotate(360deg);
   }
 }
-
 /**** @ @ @ @ @ @ @ ******* RESPONSIVE **** @ @ @ @ @ @ @ @ *******/
 @media (max-width: 768px) {
   .hs2 .hs2-content {
