@@ -16,6 +16,7 @@ public class PruHeroSection2 extends Div {
         Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
 
         Button cta = new Button("Hablemos de tu idea →");
+        cta.addClassName("hs2-cta");
 
 
         Div content = new Div(subtitle, cta);

@@ -2,7 +2,7 @@
  src/main/frontend/themes/hero-pruebas.css
 */
 
-/*Atributos generales de herosection*/
+/*  *  *  *  *  *  *  * Atributos generales de herosection *  *  *  *  *  *  *  */
 .hs-pru{
 padding:10px;
  border: 3px solid #f0f0f0; /* Tu borde */
@@ -12,15 +12,20 @@ padding:10px;
 
 }
 
-/* ###############   HS 2  ############### */
-/* General para Hero */
+/*  *  *  * ###########   HS 2  ############### *  *  *  */
+
+/* ---- ---- ---- General para Hero ---- ---- ---- */
 .hs2 {
   background-image: url("images/escritorio-bottom-colores.png");
+   background-image: url("images/Futurista-Azul-oscuro.png");
+   background-image: url("images/Laboratorio-Diseño-Futurista.png");
+
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -28,35 +33,50 @@ padding:10px;
   padding: 2em;
 }
 
-/* Título arriba */
+/* ---- ---- ---- Título principal ---- ---- ---- */
+
 .hs2 h1 {
   font-size: 4rem;
   margin: 1rem 0 2rem 0;
   color: white;
   text-shadow: 1px 1px 2px black;
   align-self: center;
-  background-color: rgba(10, 10, 25, 0.1); /* violeta azulado semitransparente */
+  background-color: rgba(10, 10, 25, 0.4); /* violeta azulado semitransparente */
+  border-radius: 4px;
+  }
 
-
+.hs2 h1:hover {
+  background-color: rgba(10, 10, 25, 0.7); /* más oscuro al pasar el mouse */
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
 
-/* Contenedor para subtítulo + botón */
+
+/* ---- ---- ----  Contenedor para subtítulo + botón ---- ---- ---- */
+
 .hs2 .hs2-content {
-  width: 30em;
+  width: 100%;
+  max-width: 30em;         /* ✅ límite máximo en desktop */
+  min-width: 0;            /* ✅ asegura que no haya desbordes */
+  box-sizing: border-box;  /* ✅ asegura que padding no sume al ancho */
   height: 20em;
-  margin: 5rem 0 2rem 0;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔥 Distribuye: uno arriba, uno abajo */
+  justify-content: space-between;
   align-items: flex-start;
-  align-self: flex-start;
+  margin-top: 5rem;
+
   color: white;
   border-radius: 12px;
   background-color: rgba(10, 10, 25, 0.4);
   padding: 1.5em;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
 }
-/* Subtítulo */
+
+/* ---- ---- ----  /* Subtítulo */ ---- ---- ---- */
+
 .hs2 p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
@@ -64,22 +84,118 @@ padding:10px;
   text-align: left;
 }
 
-/* Botón */
-.hs2 button {
-  align-self: flex-start;
-  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+.hs2 p:hover {
+  background-color: rgba(10, 10, 25, 0.7);
+  transition: background-color 0.3s ease;
+   border-radius: 5px;
+}
+
+
+/* ---- ---- ----  /* Botón */ ---- ---- ---- */
+
+/* ---- Botón - Contenedor principal ---- */
+.hs2 .hs2-cta {
+  position: relative;
+  overflow: hidden;
+
+  /* ✅ Cambio 1: Usa un fondo semi-transparente para darle profundidad */
+  background-color: rgba(31, 107, 255, 0.2);
+
   color: white;
-  border: none;
+
+  /* ✅ Cambio 2: Usa un borde sólido y visible */
+  border: 2px solid #1F6BFF;
+
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 0.9em;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  z-index: 1;
   box-shadow: 0 4px 12px rgba(31, 107, 255, 0.3);
   max-width: fit-content;
   margin-top: 1rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
 }
-.hs2 button:hover {
-  transform: scale(1.03);
+
+/* ---- Pseudo-elemento con el fondo estático del botón ---- */
+.hs2 .hs2-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  /* El fondo de degradado ahora aparece con el hover para no competir */
+  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+  z-index: -1;
+  transform: scale(0); /* Oculto por defecto */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ---- Pseudo-elemento con el borde animado (ajuste de nombres) ---- */
+.hs2 .hs2-cta::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  background: conic-gradient(from 0deg, #1F6BFF, #8B5CF6, #1F6BFF);
+  z-index: -2;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* ---- ESTADO HOVER: se activan los efectos ---- */
+.hs2 .hs2-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(31, 107, 255, 0.4);
+  /* ✅ Cambio 3: Al hacer hover, el fondo se vuelve más opaco o cambia de color */
+  background-color: transparent; /* O el color de tu preferencia */
+}
+
+/* ---- ESTADO HOVER: se muestra el fondo de degradado ---- */
+.hs2 .hs2-cta:hover::before {
+  transform: scale(1);
+}
+
+/* ---- ESTADO HOVER: se muestra y anima el borde ---- */
+.hs2 .hs2-cta:hover::after {
+  animation: rotate-border 2s linear infinite;
+  transform: scale(1);
+  opacity: 1;
+}
+
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/**** @ @ @ @ @ @ @ ******* RESPONSIVE **** @ @ @ @ @ @ @ @ *******/
+@media (max-width: 768px) {
+  .hs2 .hs2-content {
+    width: 90%;
+       height: auto;
+
+       padding: 1em;
+       margin: 0 auto; /* opcional: para centrar */
+  }
+
+  .hs2 p {
+    font-size: 1rem;
+  }
+
+  .hs2 button {
+    font-size: 0.9rem;
+    padding: 0.6em 1em;
+  }
 }
