@@ -105,6 +105,7 @@ vaadin-app-layout::part(navbar) {
  background-image: url('images/escritorio-bottom-violeta.png');
   background-image: url('images/escritorio-hello-november.png');
   background-image: url('images/escritorio-hello-user.png');
+   background-image: url('images/Laboratorio-Diseño-Futurista.png');
  background:
     linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(10, 28, 61, 0.3) 40%, rgba(10, 28, 61, 0) 80%),
     url('VAADIN/themes/nw-base/images/Laboratorio-Diseño-Futurista.png');
