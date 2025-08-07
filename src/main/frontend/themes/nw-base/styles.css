@@ -76,6 +76,7 @@ vaadin-app-layout::part(navbar) {
   justify-content: flex-end;
   gap: 1rem;
   flex-wrap: wrap;
+  padding-right: 1rem;
 }
 
 @media (max-width: 768px) {
