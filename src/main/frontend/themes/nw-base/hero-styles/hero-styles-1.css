@@ -1,67 +1,160 @@
-/* ###############   HERO SECTION   ############### */
+/* ############### HERO SECTION ############### */
+
+/* ---- General para Hero ---- */
 .hero {
-
-
+  background-image: url("images/Laboratorio-Diseño-Futurista.png"); /* Última imagen válida */
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  border: 3px solid #f0f0f0;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-/* Contenedor de texto sobre imagen */
-.hero-content {
-  max-width: 100%;
-  margin: 2em;
+  flex-direction: column;
+  position: relative;
   padding: 2em;
-  border-radius: 16px;
-
-  background-color: rgba(10, 10, 25, 0.4); /* violeta azulado semitransparente */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 
-/* Título */
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #e0e0ff;
-  font-weight: 700;
-  text-shadow: 1px 1px 3px #000000aa;
-}
-
-/* Párrafo */
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #d0d0e0;
-}
-
-/* Botón de acción */
-.cta-button {
-  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+/* ---- Título principal ---- */
+.hero h1 {
+  font-size: 3rem;
+  margin: 1rem 0 2rem 0;
   color: white;
-  border: none;
+  text-shadow: 1px 1px 2px black;
+  align-self: center;
+  background-color: rgba(10, 10, 25, 0.4); /* Violeta azulado semitransparente */
+  border-radius: 4px;
+  padding: 0.5em 1em; /* Añadido para mejor presentación */
+}
+
+.hero h1:hover {
+  background-color: rgba(10, 10, 25, 0.7); /* Más oscuro al pasar el mouse */
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+/* ---- Contenedor para subtítulo + botón ---- */
+.hero .hero-content {
+  width: 100%;
+  max-width: 30em; /* Límite máximo en desktop */
+  min-width: 0; /* Evita desbordes */
+  box-sizing: border-box; /* Asegura que padding no sume al ancho */
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 4.5rem;
+  color: white;
+  border-radius: 12px;
+  background-color: rgba(10, 10, 25, 0.4);
+  padding: 1.5em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- Subtítulo ---- */
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero p:hover {
+  background-color: rgba(10, 10, 25, 0.7);
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+/* ---- Botón - Contenedor principal ---- */
+.hero .hero-cta-wrapper {
+  position: relative;
+  display: inline-block; /* Asegura que el contenedor se ajuste al botón */
+  padding: 4px; /* Espacio para el borde luminoso */
+  border-radius: 12px;
+}
+
+.hero .hero-cta {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(31, 107, 255, 0.3); /* Fondo semi-opaco para visibilidad */
+  color: white;
+  border: none; /* Sin borde sólido */
   border-radius: 8px;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
+  padding: 0.6em 1.2em;
+  font-size: 1.3em;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: 0 4px 12px rgba(31, 107, 255, 0.3);
+  max-width: fit-content;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
 }
 
-.cta-button:hover {
+/* ---- Estado Hover del Botón ---- */
+.hero .hero-cta:hover {
   transform: scale(1.05);
+  background-color: rgba(31, 107, 255, 0.5); /* Más opaco al pasar el mouse */
   box-shadow: 0 6px 20px rgba(31, 107, 255, 0.4);
+}
+
+/* ---- Borde giratorio y luminoso con ::before ---- */
+.hero .hero-cta-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 12px;
+  background: conic-gradient(from 0deg, transparent, #1F6BFF, #8B5CF6, #1F6BFF, transparent);
+  animation: rotate-border 4s linear infinite, neon-pulse 1.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* ---- Animaciones ---- */
+@keyframes rotate-border {
+  from {
+    background: conic-gradient(from 0deg, transparent, #1F6BFF, #8B5CF6, #1F6BFF, transparent);
+  }
+  to {
+    background: conic-gradient(from 360deg, transparent, #1F6BFF, #8B5CF6, #1F6BFF, transparent);
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(31, 107, 255, 0.5), 0 0 16px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(31, 107, 255, 0.8), 0 0 32px rgba(139, 92, 246, 0.8);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero .hero-content {
+    width: 90%;
+    height: auto;
+    padding: 1em;
+    margin: 0 auto; /* Centrado */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .hero-cta {
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+  }
+
+  .hero .hero-cta-wrapper {
+    padding: 3px; /* Borde más delgado en móviles */
+  }
+
+  .hero .hero-cta-wrapper::before {
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+  }
 }

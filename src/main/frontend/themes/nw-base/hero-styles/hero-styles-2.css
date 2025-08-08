@@ -1,55 +1,202 @@
+/* ############### HERO SECTION ############### */
+
+/* ---- ---- ---- General para Hero ---- ---- ---- */
 .hero {
+  background-image: url("images/escritorio-bottom-colores.png");
+   background-image: url("images/Futurista-Azul-oscuro.png");
+   background-image: url("images/Laboratorio-Diseño-Futurista.png");
+
 
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  background-image:
+  background-position: center;
   width: 100%;
-  height: calc(100vh - 56px); /* Ajusta para compensar el header */
+  min-height: 100vh;
+
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border: 3px solid #f0f0f0;
-  border-radius: 10px;
-  margin: 20px 0; /* Combina margin-top y margin-bottom */
+  flex-direction: column;
+  position: relative;
+  padding: 2em;
 }
 
-.hero-content {
-  max-width: 28rem;
-  background-color: rgba(10, 28, 61, 0.3); /* Color de fondo más coherente con el tema */
-  padding: em;
-  margin-top: 1.5em; /* Ajuste para mejor alineación */
-  margin-left: 0.5em;
-  border-radius: 12px;
-  transition: opacity 0.3s ease; /* Simplifica la transición */
-}
+/* ---- ---- ---- Título principal ---- ---- ---- */
 
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #00AAAA; /* Color acorde al diseño */
-  font-family: 'Poppins', sans-serif; /* Fuente consistente con el tema */
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  color: #E0E0E0; /* Color de texto más legible */
-  font-family: 'Inter', sans-serif; /* Fuente consistente con el tema */
-}
-
-.cta-button {
-  background-color: #1F6BFF;
+.hero h1 {
+  font-size: 3rem;
+  margin: 1rem 0 2rem 0;
   color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  text-shadow: 1px 1px 2px black;
+  align-self: center;
+  background-color: rgba(10, 10, 25, 0.4); /* violeta azulado semitransparente */
+  border-radius: 4px;
+  }
+
+.hero h1:hover {
+  background-color: rgba(10, 10, 25, 0.7); /* más oscuro al pasar el mouse */
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
 
-.cta-button:hover {
-  transform: scale(1.03);
+
+/* ---- ---- ----  Contenedor para subtítulo + botón ---- ---- ---- */
+
+.hero .hero-content {
+  width: 100%;
+  max-width: 30em;         /* ✅ límite máximo en desktop */
+  min-width: 0;            /* ✅ asegura que no haya desbordes */
+  box-sizing: border-box;  /* ✅ asegura que padding no sume al ancho */
+  height: 20em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 4.5rem;
+
+  color: white;
+  border-radius: 12px;
+  background-color: rgba(10, 10, 25, 0.4);
+  padding: 1.5em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+}
+
+/* ---- ---- ----  /* Subtítulo */ ---- ---- ---- */
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero p:hover {
+  background-color: rgba(10, 10, 25, 0.7);
+  transition: background-color 0.3s ease;
+   border-radius: 5px;
+}
+
+
+/* ---- Botón - Contenedor principal ---- */
+.hero .hero-cta {
+  position: relative;
+  overflow: hidden;
+
+  /* El fondo principal es un color sólido o semitransparente para que sea visible sin hover */
+  background-color: rgba(31, 107, 255, 0.2);
+
+  color: white;
+  /* El borde es visible en el estado normal */
+  border: 2px solid #1F6BFF;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(31, 107, 255, 0.3);
+  max-width: fit-content;
+  margin-top: 1rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+/* ---- Pseudo-elemento con el fondo de degradado (ahora en el hover) ---- */
+.hero .hero-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+  z-index: -1;
+  /* El degradado se oculta por defecto y aparece al hacer hover */
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ---- Pseudo-elemento con el borde animado (conic-gradient) ---- */
+.hero .hero-cta::after {
+  content: "";
+  position: absolute;
+  /* Ajuste a 0px para que el borde se vea más sutil */
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 8px; /* Mismo radio que el botón para un ajuste perfecto */
+  background: conic-gradient(from 0deg, #1F6BFF, #8B5CF6, #1F6BFF);
+  z-index: -2;
+  /* Oculto por defecto, aparece con hover */
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* ---- ESTADO HOVER: se activan los efectos ---- */
+.hero .hero-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(31, 107, 255, 0.4);
+  /* El fondo principal se vuelve transparente al hacer hover */
+  background-color: transparent;
+}
+
+/* ---- ESTADO HOVER: se muestra el fondo de degradado ---- */
+.hero .hero-cta:hover::before {
+  transform: scale(1);
+}
+
+/* ---- ESTADO HOVER: se muestra y anima el borde ---- */
+.hero .hero-cta:hover::after {
+  animation: rotate-border 2s linear infinite;
+  transform: scale(1);
+  opacity: 1;
+}
+
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/**** @ @ @ @ @ @ @ ******* RESPONSIVE **** @ @ @ @ @ @ @ @ *******/
+@media (max-width: 768px) {
+  .hero .hero-content {
+    width: 90%;
+       height: auto;
+
+       padding: 1em;
+       margin: 0 auto; /* opcional: para centrar */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero button {
+    font-size: 0.9rem;
+    padding: 0.6em 1em;
+  }
+}
+
+
+
+
+/* Luz de neón continua en el contorno */
+.hero .hero-cta {
+  position: relative;
+  box-shadow: 0 0 5px #1F6BFF, 0 0 10px #1F6BFF, 0 0 20px #8B5CF6, 0 0 40px #8B5CF6;
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px #1F6BFF, 0 0 10px #1F6BFF, 0 0 20px #8B5CF6, 0 0 40px #8B5CF6;
+  }
+  50% {
+    box-shadow: 0 0 2px #1F6BFF, 0 0 5px #1F6BFF, 0 0 10px #8B5CF6, 0 0 20px #8B5CF6;
+  }
 }

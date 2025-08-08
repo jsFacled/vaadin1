@@ -1,4 +1,4 @@
-/* ###############   HERO SECTION   ############### */
+/* ############### HERO SECTION ############### */
 
 /* ---- ---- ---- General para Hero ---- ---- ---- */
 .hero {
@@ -90,7 +90,6 @@
   border: 2px solid #1F6BFF;
   border-radius: 8px;
   padding: 0.6em 1.2em;
-  font-size: 0.9em;
   font-weight: 600;
   cursor: pointer;
   z-index: 1;
@@ -162,7 +161,6 @@
     transform: rotate(360deg);
   }
 }
-
 /**** @ @ @ @ @ @ @ ******* RESPONSIVE **** @ @ @ @ @ @ @ @ *******/
 @media (max-width: 768px) {
   .hero .hero-content {
@@ -180,5 +178,24 @@
   .hero button {
     font-size: 0.9rem;
     padding: 0.6em 1em;
+  }
+}
+
+
+
+
+/* Luz de neón continua en el contorno */
+.hero .hero-cta {
+  position: relative;
+  box-shadow: 0 0 5px #1F6BFF, 0 0 10px #1F6BFF, 0 0 20px #8B5CF6, 0 0 40px #8B5CF6;
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px #1F6BFF, 0 0 10px #1F6BFF, 0 0 20px #8B5CF6, 0 0 40px #8B5CF6;
+  }
+  50% {
+    box-shadow: 0 0 2px #1F6BFF, 0 0 5px #1F6BFF, 0 0 10px #8B5CF6, 0 0 20px #8B5CF6;
   }
 }
