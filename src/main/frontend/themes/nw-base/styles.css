@@ -3,6 +3,7 @@
 @import "hero-pruebas.css";
 @import "test-button.css";
 @import "./hero-styles/hero-styles.css";
+@import "contactForm5.css";
 
 
 /*****************   Estilos generales   *******************/
@@ -30,15 +31,6 @@ h1, h2 {
 
 a {
   text-decoration: none;
-}
-
-.section {
- padding:10px;
-  border: 3px solid #f0f0f0; /* Tu borde */
-   border-radius: 10px; /* Redondea las 4 esquinas con un radio de 10 píxeles */
-    margin-bottom: 20px;
-    margin-top: 1px;
-
 }
 
 /* ###############  HEADER SECTION   ############### */
@@ -107,17 +99,21 @@ vaadin-app-layout::part(navbar) {
   background-image: url('images/escritorio-hello-november.png');
   background-image: url('images/escritorio-hello-user.png');
    background-image: url('images/Laboratorio-Diseño-Futurista.png');
+   /*
  background:
     linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(10, 28, 61, 0.3) 40%, rgba(10, 28, 61, 0) 80%),
     url('VAADIN/themes/nw-base/images/Laboratorio-Diseño-Futurista.png');
+*/
+
 }
 /* ################################################ */
 
 
 /* ###############   CONTACT SECTION   ############### */
 #contact {
-  background-color: #EBE0F7;
+
 }
+
 
 /* ################################################ */
 

@@ -6,47 +6,26 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class HeroSection extends VerticalLayout {
-/*
-    public HeroSection() {
-        setId(SectionId.HERO.get());
-        addClassNames("hero", "section");
 
-        H1 title = new H1("Transformá tus ideas en soluciones digitales");
+     public HeroSection() {
+          setId(SectionId.HERO.get());
+          addClassNames("hero");
 
-        Paragraph subtitle = new Paragraph(
-                "Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio"
-        );
+          H1 title = new H1("Transformá tus ideas en soluciones digitales");
 
-        Button cta = new Button("Hablemos de tu idea →");
-        cta.addClassName("hero-cta");
+          Paragraph subtitle = new Paragraph(
+                  "Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio"
+          );
 
-        Div ctaWrapper = new Div(cta);
-        ctaWrapper.addClassName("hero-cta-wrapper");
+          Button ctaButton = new Button("Hablemos de tu idea →");
+          ctaButton.addClassName("hero-cta");
 
-        Div content = new Div(subtitle, ctaWrapper);
-        content.addClassName("hero-content");
+          Anchor ctaLink = new Anchor("#contact", "");
+          ctaLink.add(ctaButton);
 
-        add(title, content);
-    }
-*/
+          Div content = new Div(subtitle, ctaLink);
+          content.addClassName("hero-content");
 
-   public HeroSection() {
-        setId(SectionId.HERO.get());
-        addClassNames("hero", "section");
-
-        H1 title = new H1("Transformá tus ideas en soluciones digitales");
-
-        Paragraph subtitle = new Paragraph("Diseñamos, desarrollamos y optimizamos sitios web, aplicaciones móviles y plataformas en la nube para impulsar el crecimiento de tu negocio");
-
-        Button cta = new Button("Hablemos de tu idea →");
-        cta.addClassName("hero-cta");
-
-
-        Div content = new Div(subtitle, cta);
-        content.addClassName("hero-content");
-
-        add(title, content);
-    }
-
-
+          add(title, content);
+     }
 }

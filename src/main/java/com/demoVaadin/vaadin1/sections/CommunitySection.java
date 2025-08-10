@@ -8,7 +8,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class CommunitySection extends VerticalLayout {
     public CommunitySection() {
         setId(SectionId.COMMUNITY.get());
-        addClassNames("community", "section");
+        addClassNames("community");
         add(new H2("Community"));
         add(new Paragraph("Join the Spanish-speaking community of Java Machine Learning."));
         add(new Paragraph("Participate in forums, blog, and collaborative activities."));

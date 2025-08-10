@@ -1,0 +1,147 @@
+/* ###############   CONTACT SECTION   ############### */
+#contact {
+  /* Fondo con overlay para mejorar contraste de lectura */
+  background:
+    linear-gradient(180deg, rgba(6,10,25,.55) 0%, rgba(6,10,25,.55) 100%),
+    url('images/panel-metal.png');
+  background-size: cover;
+  background-position: center;
+
+  /* centra el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* respiración y separación del resto */
+  padding: 48px 16px;
+}
+
+/* ############### FORMULARIO DE CONTACTO ############### */
+
+/* Contenedor “card” */
+.contact-card {
+  width: 100%;
+  max-width: 960px;
+  padding: 0;                 /* el padding va en .form-wrapper */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Capa vidriada con blur y alto contraste */
+.form-wrapper {
+  width: 100%;
+  padding: 28px;
+  border-radius: 16px;
+
+  /* vidrio oscuro */
+  background: rgba(10, 14, 28, 0.68);
+  backdrop-filter: blur(6px);
+
+  /* borde y sombra */
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(120,146,255,0.10);
+
+  color: #F4F7FF;            /* texto por defecto más claro */
+}
+
+/* Título e instrucciones */
+.form-wrapper h2 {
+  margin: 0 0 10px 0;
+  color: #F8FAFF;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+.form-wrapper p {
+  margin: 0 0 22px 0;
+  color: #DCE3FF;            /* alto contraste */
+  text-shadow: 0 1px 1px rgba(0,0,0,.35);
+}
+
+/* ===== Vaadin fields (labels, inputs, placeholders) ===== */
+.form-wrapper vaadin-text-field::part(label),
+.form-wrapper vaadin-email-field::part(label),
+.form-wrapper vaadin-text-area::part(label) {
+  color: #E6ECFF;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0,0,0,.25);
+}
+
+.form-wrapper vaadin-text-field::part(helper-text),
+.form-wrapper vaadin-email-field::part(helper-text),
+.form-wrapper vaadin-text-area::part(helper-text) {
+  color: #C7D2FF;
+}
+
+/* caja del input */
+.form-wrapper vaadin-text-field::part(input-field),
+.form-wrapper vaadin-email-field::part(input-field),
+.form-wrapper vaadin-text-area::part(input-field) {
+  background: rgba(2, 6, 23, 0.55);
+  border-radius: 10px;
+  border: 1px solid rgba(120,146,255,0.35);
+  box-shadow: inset 0 0 0 1px rgba(120,146,255,0.05);
+}
+
+/* estado hover/focus */
+.form-wrapper vaadin-text-field::part(input-field):hover,
+.form-wrapper vaadin-email-field::part(input-field):hover,
+.form-wrapper vaadin-text-area::part(input-field):hover {
+  border-color: rgba(130,160,255,0.6);
+}
+
+.form-wrapper vaadin-text-field::part(input-field)::after,
+.form-wrapper vaadin-email-field::part(input-field)::after,
+.form-wrapper vaadin-text-area::part(input-field)::after {
+  /* highlight de foco */
+  box-shadow: 0 0 0 2px rgba(120,146,255,0.35);
+}
+
+.form-wrapper vaadin-text-field::part(value),
+.form-wrapper vaadin-email-field::part(value),
+.form-wrapper vaadin-text-area::part(value) {
+  color: #F7FAFF;            /* texto del input */
+}
+
+.form-wrapper vaadin-text-field::part(value)::placeholder,
+.form-wrapper vaadin-email-field::part(value)::placeholder,
+.form-wrapper vaadin-text-area::part(value)::placeholder {
+  color: rgba(235, 240, 255, 0.75); /* placeholder más visible */
+}
+
+/* Botón CTA */
+.cta-button {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow:
+    0 6px 22px rgba(59,130,246,0.35),
+    0 2px 0 rgba(255,255,255,0.06) inset;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 28px rgba(59,130,246,0.45),
+    0 2px 0 rgba(255,255,255,0.07) inset;
+  filter: brightness(1.06);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(255,255,255,.6);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #contact { padding: 36px 12px; }
+  .form-wrapper { padding: 20px; border-radius: 12px; }
+}

@@ -1,0 +1,140 @@
+/* ###############    CONTACT SECTION     ############### */
+ #contact {
+  /* Un degradado más suave y con un toque de color */
+  /*background: linear-gradient(
+       to right,
+       rgba(10, 28, 61, 0.95) 0%,
+       rgba(10, 28, 61, 0.85) 40%,
+       rgba(10, 28, 61, 0.7) 100%
+     ),
+     url('images/panel-metal.png');
+     */
+
+  /* Manteniendo la imagen de fondo, pero con un efecto de superposición más integrado */
+  background-image:url('images/panel-metal.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* Combina el degradado con la imagen */
+  border-radius: 12px;
+  padding: 60px 32px; /* Aumentamos un poco el padding para más aire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para futuros elementos absolutos */
+  overflow: hidden; /* Recorta elementos que puedan salirse */
+ }
+
+ /* Añadimos unas ondas sutiles de fondo (opcional, requiere un SVG o imagen) */
+ #contact::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150%;
+  height: 150%;
+  background-image: url('images/ondas-contacto.svg'); /* Reemplaza con tu imagen de ondas */
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.15; /* Un toque muy sutil */
+  animation: waveAnimation 15s linear infinite; /* Animación suave */
+  transform: rotate(-10deg);
+ }
+
+ @keyframes waveAnimation {
+  0% {
+    transform: translate(-20px, 20px) rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: translate(-20px, 20px) rotate(-10deg) scale(1);
+  }
+ }
+
+ /* Card del formulario */
+  .contact-card {
+   width: 100%;
+   max-width: 768px; /* Reducimos un poco el ancho máximo para que no ocupe tanto en pantallas grandes */
+   padding: 32px; /* Aumentamos el padding */
+   box-sizing: border-box;
+   display: flex;
+   justify-content: center;
+  }
+
+  .form-wrapper {
+   width: 100%;
+   /* Un fondo menos opaco y un azul más presente */
+   background: rgba(15, 55, 105, 0.7);
+   backdrop-filter: blur(8px); /* Un desenfoque ligero */
+   border-radius: 20px; /* Bordes más redondeados para un look más amigable */
+   border: 1px solid rgba(120, 146, 255, 0.15); /* Un borde más sutil */
+   box-shadow:
+     0 12px 48px rgba(0, 0, 0, 0.35),
+     inset 0 0 0 1px rgba(120,146,255,0.05);
+   padding: 36px; /* Más espacio interior */
+   color: #ECF4FF; /* Un tono ligeramente más cálido */
+  }
+
+  /* Título / instrucciones */
+  .form-wrapper h2 {
+   margin: 0 0 12px 0;
+   font-weight: 700;
+   color: #FFFFFF; /* Blanco puro para destacar */
+   font-size: 2em; /* Un poco más grande */
+  }
+
+  .form-wrapper p {
+   margin: 0 0 24px 0;
+   color: rgba(236, 244, 255, 0.75); /* Un poco menos intenso */
+   line-height: 1.6; /* Mejor legibilidad */
+  }
+
+  /* Campos */
+  .form-wrapper vaadin-text-field,
+  .form-wrapper vaadin-email-field,
+  .form-wrapper vaadin-text-area {
+   --vaadin-field-default-width: 100%;
+   --vaadin-field-border-radius: 12px; /* Bordes redondeados para los campos */
+   --vaadin-field-background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil */
+   --vaadin-field-border-color: rgba(150, 170, 255, 0.2); /* Borde suave */
+   color: #EAF0FF;
+  }
+
+  .form-wrapper vaadin-text-field::part(input-field),
+  .form-wrapper vaadin-email-field::part(input-field),
+  .form-wrapper vaadin-text-area::part(input-field) {
+   padding: 14px 16px; /* Más espacio dentro de los campos */
+  }
+
+  /* Botón CTA */
+  .cta-button {
+   background: linear-gradient(135deg, #3887F9, #A065ED); /* Un degradado azul a morado más moderno */
+   color: #FFFFFF;
+   border: none;
+   border-radius: 12px; /* Bordes más redondeados */
+   padding: 12px 24px; /* Más padding */
+   font-weight: 600;
+   font-size: 1.1em; /* Un poco más grande */
+   box-shadow: 0 8px 24px rgba(56, 135, 249, 0.4); /* Sombra más pronunciada */
+   transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+
+  .cta-button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 12px 32px rgba(56, 135, 249, 0.5);
+   filter: brightness(1.1);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+   #contact { padding: 40px 16px; border-radius: 8px; }
+   .contact-card { padding: 24px; }
+   .form-wrapper { padding: 24px; border-radius: 16px; }
+   .form-wrapper h2 { font-size: 1.75em; }
+  }
+
+  @media (max-width: 480px) {
+   .form-wrapper h2 { font-size: 1.5em; }
+   .cta-button { font-size: 1em; padding: 10px 20px; }
+  }

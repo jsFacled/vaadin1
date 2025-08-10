@@ -2,14 +2,10 @@
 
 /* ---- ---- ---- General para Hero ---- ---- ---- */
 .hero {
-  background-image: url("images/escritorio-bottom-colores.png");
-   background-image: url("images/Futurista-Azul-oscuro.png");
-   background-image: url("images/Laboratorio-Diseño-Futurista.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 100%;
   min-height: 100vh;
 
@@ -97,6 +93,7 @@
   max-width: fit-content;
   margin-top: 1rem;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+
 }
 
 /* ---- Pseudo-elemento con el fondo de degradado (ahora en el hover) ---- */

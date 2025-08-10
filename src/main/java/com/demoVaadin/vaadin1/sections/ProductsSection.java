@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class ProductsSection extends VerticalLayout {
     public ProductsSection() {
         setId(SectionId.PRODUCTS.get());
-        addClassNames("products", "section");
+        addClassNames("products");
 
         add(new H2("Prototypes and Current Products"));
         add(new Paragraph("• Online dataset analyzer (Pandas-style SaaS)."));

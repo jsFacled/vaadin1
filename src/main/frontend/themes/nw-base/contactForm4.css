@@ -1,0 +1,162 @@
+/* ###############   CONTACT SECTION   ############### */
+#contact {
+  /* Fondo con imagen + overlay suave para legibilidad */
+  position: relative;
+  background-image: url('images/panel-metal.png');
+  background-size: cover;
+  background-position: center;
+
+  /* Centra el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Respiración vertical */
+  padding: 40px 16px;
+}
+
+/* Overlay oscuro (no toca tu imagen) */
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% 40%, rgba(6, 10, 26, 0.35) 0%, rgba(6, 10, 26, 0.65) 55%, rgba(6, 10, 26, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* ############### FORMULARIO DE CONTACTO ############### */
+
+/* Card del formulario */
+.contact-card {
+  position: relative;            /* para estar por encima del overlay */
+  z-index: 1;
+  width: 100%;
+  max-width: 960px;              /* Mantén alineado con tu layout */
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  background: rgba(8, 12, 28, 0.72);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  border: 1px solid rgba(120, 146, 255, 0.22);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(120,146,255,0.08);
+  padding: 28px;
+  color: #EAF0FF;
+}
+
+/* Título / instrucciones */
+.form-wrapper h2 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #fff;
+}
+
+.form-wrapper p {
+  margin: 0 0 20px 0;
+  color: rgba(234, 240, 255, 0.85);
+}
+
+/* ---------- Vaadin fields: colores y contraste ---------- */
+.form-wrapper vaadin-text-field,
+.form-wrapper vaadin-email-field,
+.form-wrapper vaadin-text-area {
+  /* Colores por propiedades (placeholder y texto real) */
+  --vaadin-input-field-color: #ffffff;                           /* texto */
+  --vaadin-input-field-placeholder-color: rgba(255,255,255,0.72);
+  --vaadin-focus-ring-color: rgba(110, 162, 255, 0.9);
+}
+
+/* Fondo, bordes y radios visibles del “input-field” */
+.form-wrapper vaadin-text-field::part(input-field),
+.form-wrapper vaadin-email-field::part(input-field),
+.form-wrapper vaadin-text-area::part(input-field) {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(160, 178, 255, 0.28);
+  border-radius: 10px;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+/* Hover: un poco más de contraste */
+.form-wrapper vaadin-text-field:hover::part(input-field),
+.form-wrapper vaadin-email-field:hover::part(input-field),
+.form-wrapper vaadin-text-area:hover::part(input-field) {
+  border-color: rgba(160, 178, 255, 0.45);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* Foco: borde y halo visibles */
+.form-wrapper vaadin-text-field:focus-within::part(input-field),
+.form-wrapper vaadin-email-field:focus-within::part(input-field),
+.form-wrapper vaadin-text-area:focus-within::part(input-field) {
+  border-color: rgba(110, 162, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(110, 162, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Label y asterisco requerido */
+.form-wrapper vaadin-text-field::part(label),
+.form-wrapper vaadin-email-field::part(label),
+.form-wrapper vaadin-text-area::part(label) {
+  color: rgba(234, 240, 255, 0.9);
+}
+
+.form-wrapper vaadin-text-field::part(required-indicator),
+.form-wrapper vaadin-email-field::part(required-indicator),
+.form-wrapper vaadin-text-area::part(required-indicator) {
+  color: #6ea2ff;
+}
+
+/* Mensajes de ayuda y de error */
+.form-wrapper vaadin-text-field::part(helper-text),
+.form-wrapper vaadin-email-field::part(helper-text),
+.form-wrapper vaadin-text-area::part(helper-text) {
+  color: rgba(234, 240, 255, 0.75);
+}
+
+.form-wrapper vaadin-text-field::part(error-message),
+.form-wrapper vaadin-email-field::part(error-message),
+.form-wrapper vaadin-text-area::part(error-message) {
+  color: #ff9b9b;
+}
+
+/* ---------- Botón CTA ---------- */
+.cta-button {
+  background: linear-gradient(135deg, #1F6BFF, #8B5CF6);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(31, 107, 255, 0.35);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(31, 107, 255, 0.45);
+  filter: brightness(1.05);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(110, 162, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* ---------- Ajustes Responsivos ---------- */
+@media (max-width: 768px) {
+  .form-wrapper { padding: 18px; border-radius: 12px; }
+}
+
+/* (opcional) Si usás reCAPTCHA dentro de .form-wrapper, alinealo mejor */
+.form-wrapper .grecaptcha-badge,
+.form-wrapper .g-recaptcha {
+  transform: scale(0.98);
+  transform-origin: left top;
+}
